@@ -1,0 +1,25 @@
+service: serverless-image-handler
+
+custom:
+  serverless-offline:
+    useChildProcesses: true
+provider:
+  name: aws
+  runtime: nodejs18.x
+  region: eu-west-1
+  profile: default
+  memorySize: 256 # optional, in MB, default is 1024
+  stage: dev
+
+plugins:
+  - serverless-plugin-typescript
+  - serverless-dotenv-plugin
+  - serverless-offline
+functions:
+  serverless-image-handler:
+    handler: image-handler/index.handler # required, handler set in AWS Lambda
+    events:
+      - http:
+          path: '/{params}'
+          method: get
+          cors: false
