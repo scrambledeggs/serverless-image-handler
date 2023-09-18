@@ -7,7 +7,7 @@
   "author": "AWS Solutions",
   "main": "index.js",
   "scripts": {
-    "clean": "rm -rf node_modules/ dist/ coverage/",
+    "clean": "npx rimraf node_modules/ dist/ coverage/",
     "pretest": "npm run clean && npm ci",
     "test": "jest --coverage --silent"
   },
