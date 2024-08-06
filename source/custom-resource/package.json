@@ -12,7 +12,7 @@
     "test": "jest --coverage --silent"
   },
   "dependencies": {
-    "axios": "^1.4.0",
+    "axios": "^1.7.2",
     "moment": "^2.29.4",
     "uuid": "^9.0.0",
     "aws-sdk": "^2.1405.0"
