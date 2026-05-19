@@ -15,7 +15,7 @@
     "pretest": "npm run clean && npm ci",
     "test": "jest --coverage --silent",
     "bump-version": "npm version $(cat ../../VERSION.txt) --allow-same-version",
-    "start:server": "node dist/server.js"
+    "start:server": "node dist/image-handler/server.js"
   },
   "dependencies": {
     "@aws-sdk/client-rekognition": "^3.835.0",
