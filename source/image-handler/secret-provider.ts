@@ -22,6 +22,10 @@ export class SecretProvider {
    * @returns Secret associated with the secret ID.
    */
   async getSecret(secretId: string): Promise<string> {
+    // BCP: bypass Secrets Manager when the key is supplied directly via env var.
+    if (process.env.SIH_SECRET_KEY) {
+      return process.env.SIH_SECRET_KEY;
+    }
     if (this.cache.secretId === secretId && this.cache.secret) {
       return this.cache.secret;
     } else {

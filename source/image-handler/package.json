@@ -10,10 +10,12 @@
   },
   "main": "index.js",
   "scripts": {
+    "build": "tsc",
     "clean": "rm -rf node_modules/ dist/ coverage/",
     "pretest": "npm run clean && npm ci",
     "test": "jest --coverage --silent",
-    "bump-version": "npm version $(cat ../../VERSION.txt) --allow-same-version"
+    "bump-version": "npm version $(cat ../../VERSION.txt) --allow-same-version",
+    "start:server": "node dist/image-handler/server.js"
   },
   "dependencies": {
     "@aws-sdk/client-rekognition": "^3.835.0",
@@ -23,6 +25,7 @@
     "color": "4.2.3",
     "color-name": "1.1.4",
     "dayjs": "1.11.10",
+    "fastify": "^5.0.0",
     "sharp": "^0.34.2"
   },
   "devDependencies": {
